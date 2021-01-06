@@ -1,4 +1,4 @@
-package com.blockypenguin.labkore;
+package com.blockypenguin.labkore.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
