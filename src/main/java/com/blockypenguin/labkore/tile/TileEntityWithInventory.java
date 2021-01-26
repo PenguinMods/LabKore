@@ -16,8 +16,8 @@ import net.minecraftforge.items.CapabilityItemHandler;
 
 public class TileEntityWithInventory extends TileEntity {
 	
-	 private UpdateDetectingItemStackHandler inventoryHandler;
-	 private LazyOptional<UpdateDetectingItemStackHandler> inventory;
+	 protected UpdateDetectingItemStackHandler inventoryHandler;
+	 protected LazyOptional<UpdateDetectingItemStackHandler> inventory;
 
 	public TileEntityWithInventory(TileEntityType<?> type, int inventorySize) {
 		super(type);
