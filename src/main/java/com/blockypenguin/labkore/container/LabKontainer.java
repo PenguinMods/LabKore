@@ -16,16 +16,17 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class LabKontainer extends Container {
+public abstract class LabKontainer<T extends TileEntity> extends Container {
 	
-	protected final TileEntity tileEntity;
+	protected final T tileEntity;
 	protected final PlayerEntity playerEntity;
     protected final IItemHandler playerInventory;
 
+	@SuppressWarnings("unchecked")
 	protected LabKontainer(ContainerType<?> type, int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity player) {
 		super(type, windowId);
 		
-		this.tileEntity = world.getTileEntity(pos);
+		this.tileEntity = (T)world.getTileEntity(pos);
         this.playerEntity = player;
         this.playerInventory = new InvWrapper(playerInventory);
 	}
