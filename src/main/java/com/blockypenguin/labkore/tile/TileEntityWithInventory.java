@@ -17,6 +17,11 @@ import net.minecraftforge.items.CapabilityItemHandler;
 public class TileEntityWithInventory extends TileEntity {
 	
 	 protected UpdateDetectingItemStackHandler inventoryHandler;
+	 
+	 /**
+	  * This is a {@link LazyOptional} of {@code inventoryHandler}.
+	  * It is recommended that you use {@code inventoryHandler} instead.
+	  */
 	 protected LazyOptional<UpdateDetectingItemStackHandler> inventory;
 
 	public TileEntityWithInventory(TileEntityType<?> type, int inventorySize) {
