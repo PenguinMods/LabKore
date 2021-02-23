@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.3.0-SNAPSHOT'
+version = '1.3.1-SNAPSHOT'
 group = 'com.blockypenguin.labkore'
 archivesBaseName = 'labkore'
 

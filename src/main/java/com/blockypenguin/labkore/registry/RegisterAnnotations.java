@@ -1,4 +1,4 @@
-package com.blockypenguin.labkore;
+package com.blockypenguin.labkore.registry;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

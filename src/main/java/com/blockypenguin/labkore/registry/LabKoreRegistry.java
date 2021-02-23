@@ -1,4 +1,4 @@
-package com.blockypenguin.labkore.util;
+package com.blockypenguin.labkore.registry;
 
 import java.lang.reflect.Field;
 import java.util.Set;
@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.reflections.Reflections;
 
-import com.blockypenguin.labkore.RegisterAnnotations;
 import com.google.common.collect.Sets;
 
 import net.minecraft.block.Block;
@@ -17,7 +16,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Registry {
+public class LabKoreRegistry {
 	private static final Logger LOGGER = LogManager.getLogger("LabKore - Registry");
 	
 	private static final Set<Block> BLOCKS = Sets.newHashSet();
@@ -35,7 +34,7 @@ public class Registry {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static <T> void addTo(Set<T> list, Field obj) {
+	public static <T> void addTo(Set<T> list, Field obj) {
 		try {
 			list.add((T)obj.get(null));
 		}catch(IllegalArgumentException | IllegalAccessException e) {
