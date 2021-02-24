@@ -34,7 +34,7 @@ public class LabKoreRegistry {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static <T> void addTo(Set<T> list, Field obj) {
+	private static <T> void addTo(Set<T> list, Field obj) {
 		try {
 			list.add((T)obj.get(null));
 		}catch(IllegalArgumentException | IllegalAccessException e) {
@@ -42,13 +42,21 @@ public class LabKoreRegistry {
 		}
 	}
 	
+	/**
+	 * Only public because Forge needs it.
+	 * DO NOT USE!
+	 */
 	@SubscribeEvent
-	private static void registerBlocks(RegistryEvent.Register<Block> e) {
+	public static void registerBlocks(RegistryEvent.Register<Block> e) {
 		BLOCKS.forEach(b -> e.getRegistry().register(b));
 	}
 	
+	/**
+	 * Only public because Forge needs it.
+	 * DO NOT USE!
+	 */
 	@SubscribeEvent
-	private static void registerItems(RegistryEvent.Register<Item> e) {
+	public static void registerItems(RegistryEvent.Register<Item> e) {
 		ITEMS.forEach(i -> e.getRegistry().register(i));
 	}
 }
